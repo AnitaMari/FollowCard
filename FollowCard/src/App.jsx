@@ -3,15 +3,40 @@
 import { FollowCard } from './FollowCard.jsx';
 import './App.css'
 
+const users = [
+  {
+    userName: "Anita",
+    name: "Ana María M.D.",
+    isFollowing: false
+  },
+  {
+    userName: "Dani",
+    name: "Daniel A.G.",
+    isFollowing: true
+  },
+  {
+    userName: "Ángel04",
+    name: "Ángel A.M.",
+    isFollowing: false
+  },
+  {
+    userName: "Nati",
+    name: "Natalia A.M.",
+    isFollowing: true
+  }
+
+]
+
 export function App() {  
   //pasar esta función de abajo o callback para abajo a los hijos, los componentes que renderizo más abajo
   // por si quiero actualizar un estado, cambiar algo...
-  const format = (userName) => `@${userName}`;
+  // const format = (userName) => `@${userName}`;
  
  return (
     <section className="App"> 
     {/* creamos la sección para estilar los componentes sin cambiar la card para que no afecte otros sitios donde se use */}
-      <FollowCard 
+      
+      {/* <FollowCard 
         formatUserName={format} 
         // isFollowing={true} 
         userName="Anita79" 
@@ -39,7 +64,22 @@ export function App() {
         formatUserName={format} 
         // isFollowing={false} 
         userName="Natalia" 
-        name="My dear Natalita"/>
+        name="My dear Natalita"/> */}
+      {
+        users.map(user => {
+          const { userName, name, isFollowing } = user
+          // users.map(({userName, name, isFollowing}) => (
+          return (
+            <FollowCard
+              key={userName}
+              userName={userName}
+              initialIsFollowing={isFollowing}
+            >    
+              {name}          
+            </FollowCard>
+          )
+        })
+      }
     </section>
   )
 }

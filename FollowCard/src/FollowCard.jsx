@@ -1,9 +1,11 @@
 import { useState } from "react";
 
-export function FollowCard ({ formatUserName, userName, name }) {
+export function FollowCard ({ children, userName, initialIsFollowing }) {
+
+//export function FollowCard ({ formatUserName, userName, name }) {
 //vamos a crear una variable que nos diga si estamos siguiendo o no y le vamos a dar un valor inicial.
 //El state nos devuelve un array con dos posiciones, primero el valor del estado y segundo una función que nos va a permitir actualizarlo.
-const [isFollowing, setIsFollowing] = useState(false);
+const [isFollowing, setIsFollowing] = useState(initialIsFollowing);
 
 //const imageSrc = `https://unavatar.io/${userName}`; //y poner abajo src={imageSrc}
 //console.log(isFollowing);
@@ -32,14 +34,14 @@ return (
     <header className="followCard-header">
         <img 
             className="followCard-avatar"
-            alt="Corazón de Francia de colores" 
+            alt="Random avatar" 
             // src={`https://previews.123rf.com/images/aliasching/aliasching1604/aliasching160400324/58850436-dise%C3%B1o-en-forma-de-coraz%C3%B3n-letras-decorativas-francia.jpg/${userName}`} />
             src={`https://unavatar.io/${userName}`} />
-        <div className="followCard-info"></div>
         <div className="followCard-info">
-        <strong>{name}</strong>
-        <span className="followCard-infoUserName">{formatUserName(userName)}</span>
-        
+        {/* <strong>{name}</strong> */}
+        <strong>{children}</strong>
+        {/* <span className="followCard-infoUserName">{formatUserName(userName)}</span> */}
+        <span className="followCard-infoUserName">@{userName}</span>
         </div>      
     </header>
 
