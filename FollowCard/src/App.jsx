@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// import { useState } from 'react'
+// import reactLogo from './assets/react.svg'
+import { FollowCard } from './FollowCard.jsx';
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+export function App() {  
+  //pasar esta función de abajo o callback para abajo a los hijos, los componentes que renderizo más abajo
+  // por si quiero actualizar un estado, cambiar algo...
+  const format = (userName) => `@${userName}`;
+ 
+ return (
+    <section className="App"> 
+    {/* creamos la sección para estilar los componentes sin cambiar la card para que no afecte otros sitios donde se use */}
+      <FollowCard 
+        formatUserName={format} 
+        // isFollowing={true} 
+        userName="Anita79" 
+        name="Ana María"/>
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <FollowCard 
+        formatUserName={format} 
+        // isFollowing={false} 
+        userName="Luna" 
+        name="My doggy Luna"/>
+
+      <FollowCard 
+        formatUserName={format} 
+        // isFollowing 
+        userName="Dexter" 
+        name="My doggy Dexter"/>
+
+      <FollowCard 
+        formatUserName={format} 
+        // isFollowing={false} 
+        userName="Bruno" 
+        name="My doggy Bruno"/>
+
+      <FollowCard 
+        formatUserName={format} 
+        // isFollowing={false} 
+        userName="Natalia" 
+        name="My dear Natalita"/>
+    </section>
   )
 }
-
-export default App
