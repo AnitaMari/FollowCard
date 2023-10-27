@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+// eslint-disable-next-line react/prop-types
 export function FollowCard ({ children, userName, initialIsFollowing }) {
 
 //export function FollowCard ({ formatUserName, userName, name }) {
