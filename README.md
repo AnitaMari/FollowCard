@@ -22,4 +22,7 @@ Next, you have to run the command "npm run dev" to initialize the project in the
 
 ## Demo
 
-Insert gif or link to demo
+This is the video of the project:
+
+https://github.com/AnitaMari/FollowCard/assets/116835304/e6cd830c-5996-45c5-9fec-918680db5301
+
