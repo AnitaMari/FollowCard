@@ -24,5 +24,6 @@ Next, you have to run the command "npm run dev" to initialize the project in the
 
 This is the video of the project:
 
-https://github.com/AnitaMari/FollowCard/assets/116835304/e6cd830c-5996-45c5-9fec-918680db5301
+https://github.com/AnitaMari/FollowCard/assets/116835304/52b5a681-0259-4fcc-ae95-d2ce105f4473
+
 
